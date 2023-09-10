@@ -9,8 +9,6 @@ export default NextAuth({
     GoogleProvider({
       clientId: process.env.GOOGLE_ID!,
       clientSecret: process.env.GOOGLE_SECRET!,
-      // wellKnown: "https://accounts.google.com/.well-known/openid-configuration",
-      // wellKnown: "http://localhost:8000/o/.well-known/openid-configuration/",
     }),
     {
       id: "django",
@@ -36,10 +34,9 @@ export default NextAuth({
       if (user) {
         try {
           let body = {
-            client_id: "X0eSMAlYRwdj3mx2lEUyPJ7n9EX1sFaP8UoNKr7K",
+            client_id: process.env.GOOGLE_CLIENT_ID!,
             grant_type: "convert_token",
-            client_secret:
-              "zfHdaEEHv0fo0tKw294pfBiyeIvXVqXKHLBJTz2UUDcDFe51TjurZfKk3BG4j7cWotaLsgmRSCBYfe0hkFI7xKYr5nEaPKkIrU7wThhPWsftiySY8tMe6Zj6oFpiVc7t",
+            client_secret: process.env.GOOGLE_CLIENT_SECRET!,
             backend: "google-oauth2",
             token: account?.access_token,
           };
