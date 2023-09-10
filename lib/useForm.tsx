@@ -29,12 +29,13 @@ export default function useForm({
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
     let { value, name, type } = e.target;
+    let parsedValue: string | number | File[] = value;
 
     if (type === "number") {
-      value = parseInt(value, 10);
+      parsedValue = parseInt(value, 10);
     }
-    if (type === "file") {
-      [value] = e.target.files!;
+    if (type === "file" && e.target instanceof HTMLInputElement) {
+      parsedValue = [e.target.files![0]];
     }
     setInputs({
       // Copy the existing state

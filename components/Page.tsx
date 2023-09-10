@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { ReactNode } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
@@ -49,7 +50,7 @@ const InnerStyles = styled.div`
   padding: 2rem;
 `;
 
-export default function Page({ children }) {
+export default function Page({ children }: PageProps) {
   return (
     <div>
       <GlobalStyles />
@@ -58,6 +59,6 @@ export default function Page({ children }) {
   );
 }
 
-Page.propTypes = {
-  children: PropTypes.any,
+type PageProps = {
+  children: ReactNode;
 };

@@ -1,12 +1,15 @@
 import Form from "./styles/Form";
 import useForm from "../lib/useForm";
+import React from "react";
 
 export default function SignUp() {
   const { inputs, handleChange, resetForm } = useForm({
-    email: "",
-    password: "",
+    initial: {
+      email: "",
+      password: "",
+    },
   });
-  async function handleSubmit(e) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     console.log(inputs);
     resetForm();
