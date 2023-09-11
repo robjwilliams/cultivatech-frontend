@@ -15,19 +15,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-// MyApp.getInitialProps = async function ({ Component, ctx }: AppContext) {
-//   let pageProps: ExtendedPageProps;
-
-//   if (Component.getInitialProps) {
-//     pageProps = await Component.getInitialProps(ctx);
-//   }
-
-//   // Assuming ctx.query is an object. Replace 'any' with a more specific type if possible.
-//   pageProps.query = ctx.query;
-
-//   return { pageProps };
-// };
-
 MyApp.getInitialProps = async function (appContext: AppContext) {
   const { Component, ctx } = appContext;
 
