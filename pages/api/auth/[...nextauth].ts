@@ -10,24 +10,6 @@ export default NextAuth({
       clientId: process.env.GOOGLE_ID!,
       clientSecret: process.env.GOOGLE_SECRET!,
     }),
-    {
-      id: "django",
-      name: "Django",
-      type: "oauth",
-      wellKnown: "http://localhost:8000/o/.well-known/openid-configuration/",
-      authorization: { params: { scope: "openid profile email" } },
-      clientId: process.env.WEBAPP_CLIENT_ID,
-      clientSecret: process.env.WEBAPP_CLIENT_SECRET,
-      checks: ["pkce", "state"],
-      async profile(profile) {
-        console.log(profile, "profile");
-        return {
-          id: profile.sub,
-          name: profile.name,
-          email: profile.email,
-        };
-      },
-    },
   ],
   callbacks: {
     async signIn({ user, account }) {
