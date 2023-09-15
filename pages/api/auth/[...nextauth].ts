@@ -22,7 +22,7 @@ export default NextAuth({
             backend: "google-oauth2",
             token: account?.access_token,
           };
-          await fetch("http://localhost:8000/auth/convert-token", {
+          await fetch(`${process.env.API_URL}/auth/convert-token`, {
             method: "post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body),
