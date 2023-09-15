@@ -1,6 +1,7 @@
 import { AppProps, AppContext } from "next/app";
 import Page from "../components/Page";
-import Providers from "./providers"; // Import the new Providers component
+import Providers from "./providers";
+import "../styles.css";
 
 interface ExtendedPageProps extends AppProps {
   query?: Record<string, any>; // or another specific type you want
