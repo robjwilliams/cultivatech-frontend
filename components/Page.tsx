@@ -22,14 +22,8 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     font-size: 10px;
   }
-  main {
-    width: 100vw;
-    height: 90vh;
-    overflow: hidden;
-  }
   *, *:before, *:after {
     box-sizing: inherit;
-    /* border: 1px solid red; */
   }
   body {
     font-family: 'radnika_next', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -37,7 +31,6 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-size: 1.5rem;
     line-height:2;
-    background-color: #f7e4bd;
   }
   a {
     text-decoration: none;
@@ -49,31 +42,20 @@ const GlobalStyles = createGlobalStyle`
   button {
     font-family: 'radnika_next', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
-  .centered-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-
 `;
 
 const InnerStyles = styled.div`
-  /* max-width: var(--maxWidth); */
-  margin: 0 auto;
-  /* padding: 2rem; */
+  margin: 0;
+  padding: 0;
   width: 100%;
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
+  height: 100vh;
 `;
 
 export default function Page({ children }: PageProps) {
   return (
     <>
       <GlobalStyles />
-      <Header />
+      {/* <Header /> */}
       <InnerStyles>{children}</InnerStyles>
     </>
   );
