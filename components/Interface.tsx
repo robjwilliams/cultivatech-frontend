@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 const Section = ({ children }: { children: React.ReactNode }) => {
   return (
     <motion.section
@@ -35,7 +36,7 @@ export default function Interface() {
             Optimize your farming operations with data-driven insights.
           </p>
           <button className="mt-8 bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600">
-            Get Started
+            <Link href="/api/auth/signin">Get Started</Link>
           </button>
         </div>
       </Section>
